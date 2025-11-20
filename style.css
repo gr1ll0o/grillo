@@ -178,6 +178,8 @@ footer {
     .bg-hero {
         margin-left: 0;
         margin-top: 20px;
+        align-items: center;
+        justify-content: center;
     }
 
     .bg-hero img {
