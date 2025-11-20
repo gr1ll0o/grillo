@@ -21,6 +21,7 @@ body {
     padding: 20px;
     border-bottom: 1px solid #13ff7c33;
     position: fixed;
+    z-index: 1000;
 }
 
 .logo {
@@ -42,8 +43,12 @@ nav a:hover {
 }
 
 .hero {
-    padding: 110px 20px 70px;
+    padding: 110px 20px 5px;
     display: flex;
+}
+
+.bg-hero {
+    margin-left: auto;    
 }
 
 .terminal .line {
@@ -69,16 +74,28 @@ nav a:hover {
     }
 }
 
+.delay0 {
+    animation: fade 1s ease forwards;
+    opacity: 0;
+    animation-delay: .3s;
+}
+
 .delay {
     animation: fade 1s ease forwards;
     opacity: 0;
-    animation-delay: .6s;
+    animation-delay: .8s;
 }
 
 .delay2 {
     animation: fade 1s ease forwards;
     opacity: 0;
-    animation-delay: 1.2s;
+    animation-delay: 1.3s;
+}
+
+.delay3 {
+    animation: fade 1s ease forwards;
+    opacity: 0;
+    animation-delay: 1.6s;
 }
 
 @keyframes fade {
@@ -145,4 +162,25 @@ footer {
     padding: 25px;
     margin-top: 40px;
     border-top: 1px solid #13ff7c33;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        font-size: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .bg-hero {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .bg-hero img {
+        height: 200px;
+    }
 }
