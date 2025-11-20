@@ -166,7 +166,7 @@ footer {
 
 @media (max-width: 768px) {
     .navbar {
-        font-size: 10px;
+        font-size: 12px;
         align-items: center;
         text-align: center;
     }
