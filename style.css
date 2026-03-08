@@ -10,6 +10,14 @@ body {
     color: #e5e5e5;
 }
 
+@font-face {
+    font-family: 'Social Media';
+    src: url('social-media.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 .green {
     color: #13ff7c;
 }
