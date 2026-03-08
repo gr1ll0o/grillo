@@ -70,12 +70,10 @@ nav a:hover {
 }
 
 @keyframes blink {
-
     0%,
     50% {
         opacity: 1;
     }
-
     51%,
     100% {
         opacity: 0;
@@ -159,10 +157,12 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: all 0.3s;
 }
 
 .btn:hover {
-    background: #0fe168;
+    background: #0ebe58;
+    text-decoration: solid;
 }
 
 .social-media {
@@ -197,4 +197,11 @@ footer {
     .bg-hero img {
         height: 220px;
     }
+}
+
+.social {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    padding-right: 5px;
 }
