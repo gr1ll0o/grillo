@@ -4,7 +4,11 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    width: 100%;
+    overflow-x: hidden;
+
     font-family: "Fira Code", monospace;
     background: #0a0a0a;
     color: #e5e5e5;
@@ -24,12 +28,23 @@ body {
 
 .navbar {
     width: 100%;
+    height: 82px;
+
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px;
+
+    padding: 20px 30px;
+
     border-bottom: 1px solid #13ff7c33;
+
     position: fixed;
+    top: 0;
+    left: 0;
+
     z-index: 1000;
+
+    background: #0a0a0a;
 }
 
 .logo {
@@ -177,26 +192,43 @@ footer {
 }
 
 @media (max-width: 768px) {
+
     .navbar {
         font-size: 12px;
+
         align-items: center;
         text-align: center;
     }
 
     .hero {
+        min-height: auto;
+
+        padding: 120px 20px 40px;
+
         flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .terminal {
+        width: 100%;
+    }
+
+    .terminal-line {
+        font-size: 1rem;
     }
 
     .bg-hero {
-        margin-left: 0;
+        width: 100%;
+        height: 280px;
+
         margin-top: 20px;
-        align-items: center;
-        justify-content: center;
     }
 
-    .bg-hero img {
-        height: 220px;
+    .digital-art {
+        width: 280px;
+        height: 280px;
     }
+
 }
 
 .social {
@@ -204,4 +236,338 @@ footer {
     color: #fff;
     font-size: 2rem;
     padding-right: 5px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 480px;
+
+    padding: 120px 30px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+}
+
+.terminal {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+.terminal-line {
+    font-size: 1.3rem;
+    margin: 10px 0;
+
+    opacity: 0;
+}
+
+.delay0 {
+    animation: fade 1s ease forwards;
+    animation-delay: .3s;
+}
+
+.delay1 {
+    animation: fade 1s ease forwards;
+    animation-delay: .8s;
+}
+
+.delay2 {
+    animation: fade 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+
+/* =========================
+   DIGITAL ART
+========================= */
+
+.bg-hero {
+    width: 45%;
+    height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.digital-art {
+    position: relative;
+
+    width: 350px;
+    height: 350px;
+
+    animation: float 6s ease-in-out infinite;
+}
+
+
+/* =========================
+   CENTRO
+========================= */
+
+.core {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 90px;
+    height: 90px;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid #13ff7c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: coreRotate 12s linear infinite;
+
+    box-shadow:
+        0 0 20px rgba(19, 255, 124, .05);
+}
+
+.core::before,
+.core::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid rgba(19, 255, 124, .35);
+}
+
+.core::before {
+    transform: rotate(30deg);
+}
+
+.core::after {
+    transform: rotate(60deg);
+}
+
+
+.core span {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 8px #fff;
+
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.core span:nth-child(1) {
+    top: 15px;
+    left: 15px;
+}
+
+.core span:nth-child(2) {
+    bottom: 15px;
+    right: 15px;
+
+    animation-delay: .5s;
+}
+
+.core span:nth-child(3) {
+    top: 50%;
+    right: 8px;
+
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   NODOS
+========================= */
+
+.node {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    background: #13ff7c;
+
+    box-shadow:
+        0 0 8px #13ff7c,
+        0 0 18px rgba(19, 255, 124, .4);
+
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+.node-1 {
+    top: 15%;
+    left: 18%;
+}
+
+.node-2 {
+    top: 20%;
+    right: 15%;
+
+    animation-delay: .3s;
+}
+
+.node-3 {
+    bottom: 18%;
+    left: 15%;
+
+    animation-delay: .8s;
+}
+
+.node-4 {
+    bottom: 15%;
+    right: 18%;
+
+    animation-delay: 1.2s;
+}
+
+.node-5 {
+    top: 50%;
+    left: 5%;
+
+    animation-delay: .5s;
+}
+
+.node-6 {
+    top: 60%;
+    right: 5%;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================
+   CONEXIONES
+========================= */
+
+.connection {
+    position: absolute;
+
+    height: 1px;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(19, 255, 124, .25),
+            transparent);
+
+    transform-origin: left center;
+
+    animation: connectionPulse 4s ease-in-out infinite;
+}
+
+.connection-1 {
+    width: 150px;
+
+    top: 23%;
+    left: 20%;
+
+    transform: rotate(25deg);
+}
+
+.connection-2 {
+    width: 140px;
+
+    top: 28%;
+    right: 15%;
+
+    transform: rotate(145deg);
+}
+
+.connection-3 {
+    width: 160px;
+
+    bottom: 24%;
+    left: 15%;
+
+    transform: rotate(-20deg);
+}
+
+.connection-4 {
+    width: 140px;
+
+    bottom: 20%;
+    right: 18%;
+
+    transform: rotate(-145deg);
+}
+
+.connection-5 {
+    width: 160px;
+
+    top: 50%;
+    left: 5%;
+
+    transform: rotate(0deg);
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: .3;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+}
+
+@keyframes connectionPulse {
+
+    0%,
+    100% {
+        opacity: .15;
+    }
+
+    50% {
+        opacity: .7;
+    }
+
+}
+
+@keyframes coreRotate {
+
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
 }
