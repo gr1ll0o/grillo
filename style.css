@@ -48,6 +48,11 @@ body {
     color: #13ff7c;
 }
 
+a {
+    text-decoration: underline;
+    color: #fff;
+}
+
 nav a {
     margin-left: 12px;
     color: #9affc7;
