@@ -119,12 +119,92 @@ nav a:hover {
 
 .section {
     padding: 60px 25px;
+    padding: 60px 25px;
+    width: 100%;
 }
 
 .title {
     color: #13ff7c;
     font-size: 1.5rem;
     margin-bottom: 20px;
+}
+
+.about-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 30px;
+    align-items: start;
+}
+
+.about-content {
+    min-width: 0;
+}
+
+.about-text {
+    margin: 15px;
+    line-height: 1.5;
+}
+
+.carrousel {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    gap: 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 5px 15px 12px;
+
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #13ff7c55 transparent;
+}
+
+.carrousel img {
+    flex: 0 0 auto;
+    width: 230px;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.carrousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carrousel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.carrousel::-webkit-scrollbar-thumb {
+    background: #13ff7c55;
+    border-radius: 10px;
+}
+
+.carrousel::-webkit-scrollbar-thumb:hover {
+    background: #13ff7c99;
+}
+
+.about-main-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-main-image img {
+    width: 100%;
+    max-width: 280px;
+    height: 400px;
+
+    object-fit: cover;
+    display: block;
 }
 
 .grid {
@@ -142,6 +222,11 @@ nav a:hover {
 
     display: flex;
     flex-direction: column;
+}
+
+.card:hover {
+    border-color: #13ff7c88;
+    transform: translateY(-2px);
 }
 
 .card-content {
@@ -456,6 +541,130 @@ footer {
     top: 50%;
     left: 5%;
     transform: rotate(0deg);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.skill-card {
+    padding: 20px;
+    border: 1px solid #13ff7c33;
+    border-radius: 8px;
+    background: #111;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.skill-card:hover {
+    border-color: #13ff7c88;
+    transform: translateY(-2px);
+}
+
+.skill-card h2 {
+    color: #13ff7c;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.skill-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-list span {
+    padding: 6px 9px;
+
+    border: 1px solid #13ff7c22;
+    border-radius: 4px;
+
+    background: #0a0a0a;
+    color: #bdbdbd;
+
+    font-size: 0.8rem;
+
+    transition: 0.2s;
+}
+
+.skill-list span:hover {
+    color: #13ff7c;
+    border-color: #13ff7c66;
+}
+
+#py {
+    color: #3776AB;
+    border-color: #3776AB;
+}
+
+#js {
+    color: #F7DF1E;
+    border-color: #F7DF1E;
+}
+
+#html {
+    color: #E34F26;
+    border-color: #E34F26;
+}
+
+#css {
+    color: #1572B6;
+    border-color: #1572B6;
+}
+
+#c {
+    color: #A8B9CC;
+    border-color: #A8B9CC;
+}
+
+#bash {
+    color: #4EAA25;
+    border-color: #4EAA25;
+}
+
+#sql {
+    color: #336791;
+    border-color: #336791;
+}
+
+#linux {
+    color: #FCC624;
+    border-color: #FCC624;
+}
+
+#git {
+    color: #F05032;
+    border-color: #F05032;
+}
+
+#github {
+    color: #898888;
+    border-color: #898888;
+}
+
+#arduino {
+    color: #00979D;
+    border-color: #00979D;
+}
+
+#docker {
+    color: #2496ED;
+    border-color: #2496ED;
+}
+
+#electron {
+    color: #47848F;
+    border-color: #47848F;
+}
+
+.skill-card > div > span > i {
+    font-size: 1em;
 }
 
 @keyframes pulse {
