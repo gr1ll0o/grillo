@@ -135,7 +135,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 280px;
     gap: 30px;
-    align-items: start;
+    align-items: center;
 }
 
 .about-content {
@@ -196,7 +196,7 @@ nav a:hover {
 .about-main-image {
     width: 100%;
     display: flex;
-    justify-content:end;
+    justify-content: center;
 }
 
 .about-main-image img {
@@ -513,6 +513,8 @@ footer {
     background: #111;
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
+
+.skill-card
 
 .skill-card:hover {
     border-color: #13ff7c88;
